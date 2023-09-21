@@ -1,34 +1,28 @@
+import Image from "next/image";
 import Link from "next/link";
 
 function Navbar() {
   return ( 
-    <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-11">
-                <nav class="main-nav">
-                    <Link href="/" class="logo">
-                        <img src="/images/wlg_logo.png" alt="" style={{objectFit: 'cover', width: '100%', height: '110px', objectPosition: 'bottom', paddingBottom: '6px'}} />
-                    </Link>
-                    <ul class="nav">
-                        <li class="scroll-to-section"><Link href="/">Início</Link></li>
-                        <li class="scroll-to-section"><Link href="/tratyvet/sobre">Traty Vet</Link></li>
-                        <li class="scroll-to-section"><Link href="/propetz/sobre">Propetz</Link></li>
-                        <li class="scroll-to-section"><Link href="/kbspk/sobre">KBSPK</Link></li>
-                        <li class="scroll-to-section"><Link href="/minag/sobre">Minag</Link></li>
-                        <li class="scroll-to-section"><Link href="/produtos">Produtos</Link></li>
-                        <li class="scroll-to-section"><Link href="/about">Sobre Nós</Link></li>
-                        <li class="scroll-to-section"><Link href="/contact">Contato</Link></li>
-                    </ul>        
-                    <Link class='menu-trigger' href=''>
-                        <span>Menu</span>
-                    </Link>
-                </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-   );
+    <nav className="flex items-center justify-between pt-3 pb-2.5 borderDot box-border 
+    xl:px-44 lg:px-28 md:px-14 px-10 sticky">
+      <Link href='/' className="xl:pl-5">
+        <Image src="/images/wlg_logo.png" alt="" width={87} height={64}/>
+      </Link>
+      
+      <ul className="flex xl:pr-4 gap-6 xl:gap-[30px] 
+      font-semibold text-zinc-800 tracking-[1px] text-[15px]">
+
+        <li><Link href='/'>Início</Link></li>
+        <li><Link href='/tratyvet'>Traty Vet</Link></li>
+        <li><Link href='/propetz'>Propetz</Link></li>
+        <li><Link href='/kbspk'>KBSPK</Link></li>
+        <li><Link href='/minag'>Minag</Link></li>
+        <li><Link href='/produtos'>Produtos</Link></li>
+        <li><Link href='/sobre'>Sobre Nós</Link></li>
+        <li><Link href='/contato'>Contato</Link></li>
+      </ul>
+    </nav>
+  );
 }
 
 export default Navbar;

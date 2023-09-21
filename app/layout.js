@@ -1,13 +1,26 @@
+import { Poppins} from 'next/font/google'
+const poppins = Poppins({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+  variable: '--font-poppins',
+})
+
 import './globals.css'
-import './css/bootstrap.min.css'
-import './css/flex-slider.css'
-import './css/font-awesome.css'
-import './css/owl-carousel.css'
-
-import '@fontsource/poppins';
-
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="pt-BR">
+      <body className={poppins.variable}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  )
+}
 
 export const metadata = {
   title: 'WLG Distribuidor Pet',
@@ -15,29 +28,4 @@ export const metadata = {
   applicationName: 'WLG Distribuidor Pet',
   authors: [{ name: "Code Fusion Agency", url: "https://code-fusion-alpha.vercel.app/" }],
   keywords: 'distribuidor pet, pets, traty vet, tratyvet, propetz, kbspk, minag'
-}
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="pt-BR">
-      <body>
-        <Navbar />
-        {children}
-        <Footer />
-        
-        <script src="/js/popper.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-
-        <script src="/js/owl-carousel.js"></script>
-        <script src="/js/accordions.js"></script>
-        <script src="/js/datepicker.js"></script>
-        <script src="/js/scrollreveal.min.js"></script>
-        <script src="/js/waypoints.min.js"></script>
-        <script src="/js/imgfix.min.js"></script> 
-        <script src="/js/slick.js"></script> 
-        <script src="/js/lightbox.js"></script> 
-        <script src="/js/isotope.js"></script> 
-      </body>
-    </html>
-  )
 }
