@@ -5,7 +5,9 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
+import '@fontsource/material-icons';
 import './globals.css'
+
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -23,7 +25,7 @@ export default function RootLayout({ children }) {
 }
 
 export const metadata = {
-  title: 'WLG Distribuidor Pet',
+  title: 'WLG - O melhor Distribuidor Pet do Vale do Paraíba',
   description: 'Site do distribuidor de produtos para pets de empresas como Traty Vet, Propetz, KBSPK e Minag da marca WLG Distribuidor pet',
   applicationName: 'WLG Distribuidor Pet',
   authors: [{ name: "Code Fusion Agency", url: "https://code-fusion-alpha.vercel.app/" }],

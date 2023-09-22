@@ -6,16 +6,132 @@
   margin: 0;
   padding: 0;
 }
-body {
-  font-family: var(--font-poppins), sans-serif;
-  position: relative;
-}
 
 html, body {
-  overflow: auto;
+  overflow-x: hidden;
   min-height: 100vh;
+
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+p {
+  font-weight: 300;
+}
+button {
+  transition: .45s;
+}
+
+
+span.symbol {
+  font-family: 'Material Icons', sans-serif;
+  display: inline-block;
+ 
+  position: relative;
+  top: 2px;
+}
+
+/* 
+  Nav 
+*/
+nav li {
+  transition: .37s;
+}
+nav li a {
+  padding: 4px 0;
+}
+nav li:hover,
+nav li.active {
+  color: #aaa;
+}
+
+/* 
+  Start
+*/
+.startGap {
+  gap: 29px;
+}
+.cachorro {
+  background: url('/images/cachorro.jpeg') no-repeat;
+  background-size: cover;
+}
+.botaoTransparente {
+  font-weight: 500;
+  font-size: 13px;
+  color: #fff;
+
+  background-color: transparent;
+  border: 1px solid #fff; 
+
+  transition: .45s;
+
+  @apply px-5 py-3.5;
+}
+.botaoTransparente:hover {
+  background-color: #fff;
+  @apply hover:text-zinc-500;
+}
+/* 
+  Empresa Card
+*/
+.EmpresaCard > div {
+  background-color: rgba(42, 42, 42, .96);
+  opacity: 0;
+  transition: .5s;
+}
+.EmpresaCard:hover > div {
+  opacity: 1;
+}
+
+/* 
+  Footer 
+*/
+.footerLogo {
+  width: 45%;
+  height: 100%;
+  padding: 0 8px;
+  
+  position: static;
+  bottom: 10px;
+  left: 40px;
+
+  @apply lg:w-[180px] lg:relative;
+}
+
+footer > * {
+  width: 93%;
+  @apply lg:w-[83%] xl:w-[73%];
+}
+
+footer > div {
+  margin-top: 10px;
+  margin-bottom: 35px;
+
+  @apply lg:pl-[10px] lg:pr-[130px] lg:mb-[75px] lg:mt-[30px];
+}
+
+footer h4 {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+
+  @apply lg:text-[16px];
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+
+  @apply lg:gap-[12px] lg:pt-[12px] lg:text-[14px];
 }
 
 .borderDot {
   border-bottom: 3px dotted #eee;
+}
+.borderFooter {
+  border-color: rgba(230, 230, 230, 0.38);
 }

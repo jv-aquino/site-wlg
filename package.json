@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/material-icons": "^5.0.7",
     "@fontsource/poppins": "^5.0.8",
     "autoprefixer": "10.4.15",
     "eslint": "8.49.0",
