@@ -1,10 +1,12 @@
 import EmpresaCard from "@/components/EmpresaCard"
 import Linha from "@/components/Linha"
 
-export default function Home() {
+import getCategorias from "@/actions/getCategorias"
+
+export default async function Home() {
   return (
     <>
-      <main className="lg:flex-row lg:flex justify-center pt-12 px-5 lg:min-h-[49vw] w-full startGap">
+      <main className="lg:flex-row lg:flex justify-center pt-12 pb-14 px-5 lg:min-h-[49vw] w-full startGap borderDot">
         <div className="cachorro flex flex-col flex-1 text-white justify-center items-start gap-2.5 
         pl-16 pr-[14px] w-[97%] aspect-square mx-auto lg:h-auto xl:pl-[105px]">
             <h2 className="font-bold text-[52px] pr-2 pt-12">Nós Somos WLG</h2>
@@ -23,7 +25,7 @@ export default function Home() {
         </div>
       </main>
 
-    <Linha />
+          <Linha categoria={{}} />
 
       <section className="section" id="explore">
         <div className="container">

@@ -36,14 +36,14 @@ span.symbol {
   Nav 
 */
 nav li {
-  transition: .37s;
+  transition: .4s;
 }
 nav li a {
   padding: 4px 0;
 }
 nav li:hover,
-nav li.active {
-  color: #aaa;
+nav .active {
+  color: #a9a9a9;
 }
 
 /* 
@@ -83,6 +83,48 @@ nav li.active {
 .EmpresaCard:hover > div {
   opacity: 1;
 }
+
+/* 
+  Carousel 
+*/
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Adjust the maximum width as needed */
+}
+
+.carousel-item {
+  flex: 0 0 33.33%; /* Display 3 items at a time */
+  min-width: 33.33%;
+  height: 150px; /* Adjust the height as needed */
+  display: none;
+}
+
+.carousel-item.active {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s ease, opacity 1s ease; /* Add smooth transition */
+}
+
+.carousel-item.prev {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.carousel-item.next {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* Add a class for sliding animation when going to prev/next */
+.carousel-slide {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+
 
 /* 
   Footer 
