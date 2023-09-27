@@ -1,11 +1,10 @@
 "use client"
-import ProdutoLinha from "./ProdutoLinha";
+
 import { useState } from "react";
-import getProdutos from "@/actions/getProdutos";
 
 function Linha({ categoria }) {
-  const [currentIndexes, setCurrentIndexes] = useState([0, 1, 2]);
-  console.log(currentIndexes)
+  const [currentItems, setCurrentItems] = useState([0, 1, 2]);
+  
   const items = [
     { color: "red" },
     { color: "blue" },
@@ -15,51 +14,36 @@ function Linha({ categoria }) {
     { color: "yellow" },
   ];
 
-  const handleNext = () => {
-    setCurrentIndexes((prevIndexes) => {
-      let aux = [];
-      aux[0] = prevIndexes[1];
-      aux[1] = prevIndexes[2];
-      aux[2] = (prevIndexes[2] + 1) % items.length;
-      return aux;
-    });
-  };
+  const nextItem = (carouselItems) => {
+    setCurrentItems(prev => {
+      if (prev[carouselItems - 1] + 1 >= items.length) { return prev }
+      return ([prev[1], prev[2], prev[2] + 1]);
+    })
+  }
+  const prevItem = () => {
+    setCurrentItems(prev => {
+      if (prev[0] - 1 <= -1) { return prev }
+      return ([prev[0] - 1, prev[0], prev[1]]);
+    })
+  }
 
-  const handlePrev = () => {
-    setCurrentIndexes((prevIndexes) => {
-      let aux = [];
-      aux[2] = prevIndexes[1];
-      aux[1] = prevIndexes[0];
-      aux[0] = (prevIndexes[0] - 1 + items.length) % items.length;
-      return aux;
-    });
-  };
 
   return (
-    <section className="section linha px-20">
-      <h3>{categoria.nome}</h3>
-      <p>{categoria.descricao}</p>
+    <section className="section linha borderDot">
+      <h3 className="font-bold">{categoria?.nome}</h3>
+      <p>{categoria?.descricao}</p>
 
-      <div className="carousel-container">
-        <div className="flex gap-3">
-          {items.map((item, index) => (
-            <div key={index}
-              className={`carousel-item carousel-slide ${
-                currentIndexes[0] === index ? "active order-1" : ""
-              } ${ currentIndexes[1] === index ? "active order-2" : ""
-              } ${ currentIndexes[2] === index ? "active order-3" : "" } 
-              ${((currentIndexes[0] - 1 + items.length) % items.length) === index ? "prev" : ""} ${
-                  (currentIndexes[2] + 1) % items.length === index ? "next" : ""
-              }`}
-              style={{ backgroundColor: item.color }}
-            ></div>
-          ))}
+      <div className="carousel relative overflow-hidden">
+        <div className="flex gap-10"
+        style={{ transform: `translateX(calc(-${currentItems[0] * 33.333}% - ${currentItems[0] * 40}px))` }}>
+          {items.map((item, i) => {
+            return (
+              <div key={i} style={{ backgroundColor: item.color }} className="p-20"></div>
+            )
+          })}
         </div>
-      </div>
-
-      <div className="carousel-controls">
-        <button onClick={() => handlePrev()}>&lt; Prev</button>
-        <button onClick={() => handleNext()}>Next &gt;</button>
+        <button type="button" onClick={() => prevItem()}  className={"left-0"}>&lt;</button>
+        <button type="button" onClick={() => nextItem(3)} className={"right"}>&gt;</button>
       </div>
     </section>
   );

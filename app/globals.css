@@ -50,7 +50,7 @@ nav .active {
   Start
 */
 .startGap {
-  gap: 29px;
+  gap: 30px;
 }
 .cachorro {
   background: url('/images/cachorro.jpeg') no-repeat;
@@ -66,11 +66,17 @@ nav .active {
 
   transition: .45s;
 
-  @apply px-5 py-3.5;
+  @apply px-6 py-3.5;
 }
 .botaoTransparente:hover {
   background-color: #fff;
   @apply hover:text-zinc-500;
+}
+.botaoTransparente.invertido {
+  @apply border-zinc-700 text-zinc-700;
+}
+.botaoTransparente.invertido:hover {
+  @apply bg-zinc-800 text-white;
 }
 /* 
   Empresa Card
@@ -87,44 +93,34 @@ nav .active {
 /* 
   Carousel 
 */
-.carousel-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  max-width: 600px; /* Adjust the maximum width as needed */
+.carousel {
+  margin: auto;
+  width: 90%;
+}
+.carousel > div {
+  transition: transform 0.55s ease;
+}
+.carousel div {
+  flex: 0 0 33%;
+}
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: 1px solid;
+  @apply border-zinc-800 text-3xl px-3.5 py-2;
+}
+.carousel button.right {
+  right: 0;
 }
 
-.carousel-item {
-  flex: 0 0 33.33%; /* Display 3 items at a time */
-  min-width: 33.33%;
-  height: 150px; /* Adjust the height as needed */
-  display: none;
+/* 
+  Saiba Mais
+*/
+.saibaMais div {
+  flex: 1 1 50%;
 }
-
-.carousel-item.active {
-  display: block;
-  opacity: 1;
-  transform: translateX(0);
-  transition: transform 1s ease, opacity 1s ease; /* Add smooth transition */
-}
-
-.carousel-item.prev {
-  opacity: 0;
-  transform: translateX(-100%);
-}
-
-.carousel-item.next {
-  opacity: 0;
-  transform: translateX(100%);
-}
-
-/* Add a class for sliding animation when going to prev/next */
-.carousel-slide {
-  transform: translateX(0);
-  transition: transform 0.3s ease;
-}
-
-
 
 /* 
   Footer 
@@ -170,6 +166,13 @@ footer ul {
 
   @apply lg:gap-[12px] lg:pt-[12px] lg:text-[14px];
 }
+footer ul li {
+  transition: .5s;
+}
+footer ul li:hover {
+  color: #a1a1a1;
+}
+
 
 .borderDot {
   border-bottom: 3px dotted #eee;

@@ -1,12 +1,32 @@
+"use client"
+
+import { useState, useEffect } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import NavLink from "./NavLink";
 
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 600) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return ( 
-    <nav className="flex items-center justify-between pt-3.5 pb-3 borderDot box-border 
-    xl:px-44 lg:px-28 md:px-14 px-10 relative">
+    <nav className={"flex items-center justify-between pt-3.5 pb-3 borderDot box-border xl:px-44 lg:px-28 md:px-14 px-10 bg-white z-10 w-full " + ((scrolled) ? 'fixed' : 'absolute')}>
       <Link href='/' className="xl:pl-14">
         <Image src="/images/wlg_logo.png" alt="" width={87} height={66}/>
       </Link>
