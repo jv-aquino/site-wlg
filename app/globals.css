@@ -23,13 +23,22 @@ button {
   transition: .45s;
 }
 
-
 span.symbol {
   font-family: 'Material Icons', sans-serif;
   display: inline-block;
  
   position: relative;
   top: 2px;
+}
+.borderDot {
+  border-bottom: 3px dotted #eee;
+}
+.borderFooter {
+  border-color: rgba(230, 230, 230, 0.38);
+}
+.divImage {
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* 
@@ -101,9 +110,9 @@ nav .active {
   transition: transform 0.55s ease;
 }
 .carousel div {
-  flex: 0 0 33%;
+  flex: 0 0 100%;
 }
-.carousel button {
+.carouselContainer button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -111,8 +120,14 @@ nav .active {
   border: 1px solid;
   @apply border-zinc-800 text-3xl px-3.5 py-2;
 }
-.carousel button.right {
-  right: 0;
+.carouselContainer button.inactive {
+  @apply border-neutral-600 text-zinc-600;
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel div {
+    flex: 0 0 33%;
+  }
 }
 
 /* 
@@ -149,7 +164,7 @@ footer > div {
   @apply lg:pl-[10px] lg:pr-[130px] lg:mb-[75px] lg:mt-[30px];
 }
 
-footer h4 {
+footer h3 {
   font-size: 19px;
   font-weight: 700;
   letter-spacing: 0.7px;
@@ -173,10 +188,20 @@ footer ul li:hover {
   color: #a1a1a1;
 }
 
-
-.borderDot {
-  border-bottom: 3px dotted #eee;
+/* Contato */
+.contato p {
+  padding: 2px 0;
 }
-.borderFooter {
-  border-color: rgba(230, 230, 230, 0.38);
+.contato a {
+  color: #fff;
+  border-radius: 1px;
+  font-weight: 500;
+  font-size: 16px;
+  width: 110px;
+
+  transition: .5s;
+  @apply px-3 py-2;
+}
+.contato a:hover {
+  color: #1d1c1c;
 }

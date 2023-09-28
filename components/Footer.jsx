@@ -2,19 +2,19 @@ import Link from "next/link";
 
 function Footer() {
   return ( 
-    <footer className="bg-background text-slate-50 flex flex-col items-center pt-8 text-center lg:text-start">
+    <footer className="bg-background text-slate-50 flex flex-col items-center mt-20 pt-8 text-center lg:text-start">
           <div className="flex flex-col justify-center items-center gap-10 lg:gap-6
           lg:flex-row lg:justify-between lg:items-start">
             <img src="/images/wlg_logo.png" alt="" className="footerLogo" />
             <div>
-              <h4>Catálogos Online</h4>
+              <h3>Catálogos Online</h3>
               <ul>
                   <li><Link href="https://drive.google.com/file/d/1v5wvf7w_DdWYy4PQeDMtO2DpVZ23PsSC/view?usp=drive_link">Traty Vet</Link></li>
                   <li><Link href="https://drive.google.com/file/d/1CHFXgbKk0voN5uKfCBVfVD3VpYm14bPn/view?usp=drive_link">Propetz</Link></li>
               </ul>
             </div>
             <div>
-              <h4>Links</h4>
+              <h3>Links</h3>
               <ul>
                   <li><Link href="/">Início</Link></li>
                   <li><Link href="/sobre">Sobre Nós</Link></li>
@@ -23,7 +23,7 @@ function Footer() {
               </ul>
             </div>
             <div>
-              <h4>Empresas</h4>
+              <h3>Empresas</h3>
               <ul>
                   <li><Link href="https://tratyvet.com/pt-br">Traty Vet</Link></li>
                   <li><Link href="https://www.propetz.com.br/">Propetz</Link></li>

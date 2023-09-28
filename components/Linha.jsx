@@ -1,9 +1,26 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Linha({ categoria }) {
   const [currentItems, setCurrentItems] = useState([0, 1, 2]);
+  const [mobile, setMobile] = useState(false);
+
+  const handleChange = () => {
+    if (window.screen.width < 1024) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    handleChange();
+    window.addEventListener('resize', handleChange);
+    return () => {
+      window.removeEventListener('resize', handleChange);
+    };
+  }, []);
   
   const items = [
     { color: "red" },
@@ -16,7 +33,7 @@ function Linha({ categoria }) {
 
   const nextItem = (carouselItems) => {
     setCurrentItems(prev => {
-      if (prev[carouselItems - 1] + 1 >= items.length) { return prev }
+      if (prev[carouselItems - 1] + 1 >= ((mobile) ? items.length + 2 : items.length)) { return prev }
       return ([prev[1], prev[2], prev[2] + 1]);
     })
   }
@@ -30,20 +47,22 @@ function Linha({ categoria }) {
 
   return (
     <section className="section linha borderDot">
-      <h3 className="font-bold">{categoria?.nome}</h3>
+      <h2 className="font-bold">{categoria?.nome}</h2>
       <p>{categoria?.descricao}</p>
 
-      <div className="carousel relative overflow-hidden">
-        <div className="flex gap-10"
-        style={{ transform: `translateX(calc(-${currentItems[0] * 33.333}% - ${currentItems[0] * 40}px))` }}>
-          {items.map((item, i) => {
-            return (
-              <div key={i} style={{ backgroundColor: item.color }} className="p-20"></div>
-            )
-          })}
+      <div className="carouselContainer relative">
+        <div className="carousel relative overflow-hidden">
+          <div className="flex gap-[40px]"
+          style={{ transform: `translateX(calc(-${currentItems[0] * (mobile ? 100 : 33.333)}% - ${currentItems[0] * 40}px))` }}>
+            {items.map((item, i) => {
+              return (
+                <div key={i} style={{ backgroundColor: item.color }} className="p-20"></div>
+              )
+            })}
+          </div>
         </div>
-        <button type="button" onClick={() => prevItem()}  className={"left-0"}>&lt;</button>
-        <button type="button" onClick={() => nextItem(3)} className={"right"}>&gt;</button>
+          <button type="button" onClick={() => prevItem()}  className={"left-[2%] " + ((currentItems[0] === 0) ? 'inactive' : '')}>&lt;</button>
+          <button type="button" onClick={() => nextItem(3)} className={"right-[2%] " + ((currentItems[2] === ((mobile) ? items.length - 1 : items.length + 1)) ? 'inactive' : '')}>&gt;</button>
       </div>
     </section>
   );

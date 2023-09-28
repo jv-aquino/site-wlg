@@ -4,10 +4,10 @@ import Linha from "@/components/Linha"
 export default async function Home() {
   return (
     <>
-      <main className="lg:flex-row lg:flex justify-center pt-[160px] pb-14 px-5 lg:min-h-[49vw] w-full startGap borderDot">
+      <main className="lg:flex-row lg:flex justify-center pb-14 px-5 lg:min-h-[49vw] w-full startGap borderDot">
         <div className="cachorro flex flex-col flex-1 text-white justify-center items-start gap-2.5 
         pl-16 pr-[14px] w-[97%] aspect-square mx-auto lg:h-auto xl:pl-[105px]">
-            <h2 className="font-bold text-[52px] pr-2 pt-12">Nós Somos WLG</h2>
+            <h1 className="font-bold text-[52px] pr-2 pt-12">Nós Somos WLG</h1>
             <p className="text-[25px] font-normal"><i>Somos a <b className="font-normal">WLG Distribuidor Pet</b>, venha nos conhecer!</i></p>
             <button type="button" className="botaoTransparente mt-5">Sobre Nós</button>
         </div>
@@ -25,7 +25,7 @@ export default async function Home() {
 
        <Linha />
 
-      <section className="flex flex-col w-[82%] lg:flex-row startGap xl:w-[77%] lg:w-[87%] mx-auto pt-20 pb-32 items-center saibaMais" id="saibaMais">
+      <section className="flex flex-col w-[82%] lg:flex-row startGap xl:w-[77%] lg:w-[87%] mx-auto pt-20 pb-12 items-center saibaMais" id="saibaMais">
           <div>
               <h2 className="font-bold text-[30px] lg:text-[36px] text-zinc-800 pb-3 lg:pb-6">Saiba mais sobre nós</h2>
               <div className="flex flex-col gap-7 leading-[23px] text-zinc-400 opacity-90">
