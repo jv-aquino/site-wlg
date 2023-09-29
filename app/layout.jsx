@@ -10,12 +10,13 @@ import './globals.css'
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-
+import Loading from '@/components/Loading';
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <body className={poppins.variable}>
+        <Loading />
         <Navbar />
         <div className='pt-[155px]'></div>
         {children}

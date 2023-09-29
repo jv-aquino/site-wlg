@@ -40,6 +40,10 @@ span.symbol {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.divImage.full {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 
 /* 
   Nav 
@@ -104,7 +108,7 @@ nav .active {
 */
 .carousel {
   margin: auto;
-  width: 90%;
+  width: 70%;
 }
 .carousel > div {
   transition: transform 0.55s ease;
@@ -118,7 +122,7 @@ nav .active {
   transform: translateY(-50%);
 
   border: 1px solid;
-  @apply border-zinc-800 text-3xl px-3.5 py-2;
+  @apply border-zinc-800 text-3xl px-4 py-2.5;
 }
 .carouselContainer button.inactive {
   @apply border-neutral-600 text-zinc-600;
@@ -126,7 +130,41 @@ nav .active {
 
 @media screen and (min-width: 1024px) {
   .carousel div {
-    flex: 0 0 33%;
+    width: auto;
+    flex: 0 0 calc(33.333% - 27px);
+  }
+  .carousel {
+    width: 75%;
+  }
+}
+
+/* Produto Card */
+.ProdutoCard:hover a {
+  display: block;
+}
+.ProdutoCard a {
+  display: none;
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  margin: auto;
+
+  height: fit-content;
+  width: fit-content;
+
+  transform: translate(-50%, 140%);
+  opacity: 0;
+
+  animation: slideUp .7s .1s forwards;
+}
+
+@keyframes slideUp {
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
 
@@ -197,10 +235,14 @@ footer ul li:hover {
   border-radius: 1px;
   font-weight: 500;
   font-size: 16px;
-  width: 110px;
+  width: 130px;
 
   transition: .5s;
-  @apply px-3 py-2;
+  @apply px-3 pb-2 pt-1.5;
+}
+.contato a span {
+  top: 3px;
+  font-size: 18px;
 }
 .contato a:hover {
   color: #1d1c1c;

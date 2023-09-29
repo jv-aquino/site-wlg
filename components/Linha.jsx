@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react";
+import ProdutoCard from "./ProdutoCard";
 
-function Linha({ categoria }) {
-  const [currentItems, setCurrentItems] = useState([0, 1, 2]);
+function Linha({ categoria, produtos }) {
+  const [currentProdutos, setCurrentProdutos] = useState([0, 1, 2]);
   const [mobile, setMobile] = useState(false);
 
   const handleChange = () => {
@@ -21,24 +22,15 @@ function Linha({ categoria }) {
       window.removeEventListener('resize', handleChange);
     };
   }, []);
-  
-  const items = [
-    { color: "red" },
-    { color: "blue" },
-    { color: "green" },
-    { color: "purple" },
-    { color: "black" },
-    { color: "yellow" },
-  ];
 
-  const nextItem = (carouselItems) => {
-    setCurrentItems(prev => {
-      if (prev[carouselItems - 1] + 1 >= ((mobile) ? items.length + 2 : items.length)) { return prev }
+  const nextItem = (carouselProdutos) => {
+    setCurrentProdutos(prev => {
+      if (prev[carouselProdutos - 1] + 1 >= ((mobile) ? produtos.length + 2 : produtos.length)) { return prev }
       return ([prev[1], prev[2], prev[2] + 1]);
     })
   }
   const prevItem = () => {
-    setCurrentItems(prev => {
+    setCurrentProdutos(prev => {
       if (prev[0] - 1 <= -1) { return prev }
       return ([prev[0] - 1, prev[0], prev[1]]);
     })
@@ -46,23 +38,27 @@ function Linha({ categoria }) {
 
 
   return (
-    <section className="section linha borderDot">
-      <h2 className="font-bold">{categoria?.nome}</h2>
-      <p>{categoria?.descricao}</p>
+    <section className="linha borderDot py-16">
+      <div className="pl-32 lg:pl-48 pb-10">
+        <h2 className="font-bold text-zinc-900 text-4xl">{categoria?.nome}</h2>
+        <p className="text-neutral-400 text-[15px] italic pt-1 font-normal">{categoria?.descricao}</p>
+      </div>
 
       <div className="carouselContainer relative">
         <div className="carousel relative overflow-hidden">
           <div className="flex gap-[40px]"
-          style={{ transform: `translateX(calc(-${currentItems[0] * (mobile ? 100 : 33.333)}% - ${currentItems[0] * 40}px))` }}>
-            {items.map((item, i) => {
+          style={{ transform: `translateX(calc(-${currentProdutos[0] * (mobile ? 100 : 33.333)}% - ${currentProdutos[0] * 13}px))` }}>
+            {produtos.map((prod, i) => {
               return (
-                <div key={i} style={{ backgroundColor: item.color }} className="p-20"></div>
+                <ProdutoCard key={i} produto={prod} self>
+                  <p className="bg-white text-black px-[16px] py-3.5"><span className="symbol">visibility</span></p>
+                </ProdutoCard>
               )
             })}
           </div>
         </div>
-          <button type="button" onClick={() => prevItem()}  className={"left-[2%] " + ((currentItems[0] === 0) ? 'inactive' : '')}>&lt;</button>
-          <button type="button" onClick={() => nextItem(3)} className={"right-[2%] " + ((currentItems[2] === ((mobile) ? items.length - 1 : items.length + 1)) ? 'inactive' : '')}>&gt;</button>
+          <button type="button" onClick={() => prevItem()}  className={"left-[4%] lg:left-[6%] " + ((currentProdutos[0] === 0) ? 'inactive' : '')}>&lt;</button>
+          <button type="button" onClick={() => nextItem(3)} className={"right-[4%] lg:right-[6%] " + ((currentProdutos[2] === ((!mobile) ? produtos.length - 1 : produtos.length + 1)) ? 'inactive' : '')}>&gt;</button>
       </div>
     </section>
   );

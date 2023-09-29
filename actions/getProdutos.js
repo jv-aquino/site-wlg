@@ -6,8 +6,8 @@ export default async function getProdutos(query) {
   const url = qs.stringifyUrl({
     url: URL,
     query: { 
-      categoriaId: query.categoriaId,
-      isFeatured: query.isFeatured,
+      categoriaId: query?.categoriaId,
+      isFeatured: query?.isFeatured,
     },
   });
 
