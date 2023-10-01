@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-function Footer() {
+import getEmpresas from "@/actions/getEmpresas";
+
+async function Footer() {
+  const empresas = await getEmpresas();
+
   return ( 
     <footer className="bg-background text-slate-50 flex flex-col items-center mt-[60px] pt-8 text-center lg:text-start">
           <div className="flex flex-col justify-center items-center gap-10 lg:gap-6
@@ -25,10 +29,11 @@ function Footer() {
             <div>
               <h3>Empresas</h3>
               <ul>
-                  <li><Link href="https://tratyvet.com/pt-br">Traty Vet</Link></li>
-                  <li><Link href="https://www.propetz.com.br/">Propetz</Link></li>
-                  <li><Link href="https://kbspk.com">KBSPK</Link></li>
-                  <li><Link href="https://www.minag.com.br">Minag</Link></li>
+                {empresas.map((empresa) => {
+                  return ( 
+                    <li key={empresa.id}><Link href={empresa.link}>{empresa.nome}</Link></li>
+                  )
+                })}
               </ul>
             </div>
           </div>

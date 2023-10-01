@@ -3,7 +3,7 @@ import Link from "next/link";
 function ProdutoCard({ produto, self, link, children }) {
   return ( 
     <div>
-      <div className="ProdutoCard divImage full relative min-h-[400px]" style={{ backgroundImage: `url(${produto.images[0]?.url})`}}>
+      <div className="ProdutoCard divImage full relative min-h-[70vw] lg:min-h-[24vw]" style={{ backgroundImage: `url(${produto.images[0]?.url})`}}>
         <Link className="text-2xl" href={(self) ? ('/produtos/' + produto.id) : link}>
           {children}
         </Link>

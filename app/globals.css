@@ -247,3 +247,8 @@ footer ul li:hover {
 .contato a:hover {
   color: #1d1c1c;
 }
+
+/* Sobre */ 
+.sobre p b {
+  font-weight: 600;
+}

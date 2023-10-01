@@ -1,12 +1,14 @@
 import getCategorias from "@/actions/getCategorias";
 import getProdutos from "@/actions/getProdutos";
+import getEmpresas from "@/actions/getEmpresas";
 
 import EmpresaCard from "@/components/EmpresaCard"
 import Linha from "@/components/Linha"
 
 export default async function Home() {
-  const categorias = getCategorias();
+  const categorias = await getCategorias();
   const produtos = getProdutos({ isFeatured: true });
+  const empresas = getEmpresas();
 
   return (
     <>
@@ -29,9 +31,9 @@ export default async function Home() {
         </div>
       </main>
 
-      {produtos.then((r) => (categorias.then((res) => res.map((categoria) => {
+      {produtos.then((r) => (categorias.map((categoria) => {
         return <Linha categoria={categoria} produtos={r.filter((produto) => produto.categoriaId === categoria.id)} />
-      }))))}
+      })))}
 
       <section className="flex flex-col w-[82%] lg:flex-row startGap xl:w-[77%] lg:w-[87%] mx-auto pt-20 pb-12 items-center saibaMais" id="saibaMais">
           <div>
