@@ -44,8 +44,8 @@ function Linha({ categoria, produtos }) {
         <p className="text-neutral-400 text-[15px] italic pt-1 font-normal">{categoria?.descricao}</p>
       </div>
 
-      <div className="carouselContainer relative">
-        <div className="carousel relative overflow-hidden">
+      <div className="carouselContainer">
+        <div className="carousel">
           <div className="flex gap-[40px]"
           style={{ transform: `translateX(calc(-${currentProdutos[0] * (mobile ? 100 : 33.333)}% - ${currentProdutos[0] * 13}px))` }}>
             {produtos.map((prod, i) => {

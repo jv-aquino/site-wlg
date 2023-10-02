@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: 'Sobre a WLG',
+}
+
 function Sobre() {
   return ( 
     <div className="sobre pb-4">

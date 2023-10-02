@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: 'Contato - WLG Distribuidor Pet',
+}
+
 function Contato() {
   return ( 
     <div className="contato">
