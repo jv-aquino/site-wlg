@@ -50,7 +50,7 @@ function Linha({ categoria, produtos }) {
           style={{ transform: `translateX(calc(-${currentProdutos[0] * (mobile ? 100 : 33.333)}% - ${currentProdutos[0] * 13}px))` }}>
             {produtos.map((prod, i) => {
               return (
-                <ProdutoCard key={i} produto={prod} self>
+                <ProdutoCard key={i} produto={prod} link={'/produtos/' + prod.categoria.nome.replace(/ /g, '').replace(/ô/g, 'o').toLowerCase()}>
                   <p className="bg-white text-black px-[16px] py-3.5"><span className="symbol">visibility</span></p>
                 </ProdutoCard>
               )

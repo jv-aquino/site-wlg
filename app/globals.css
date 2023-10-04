@@ -124,7 +124,7 @@ nav .active {
 .carousel div {
   flex: 0 0 100%;
 }
-.carouselContainer button {
+.carouselContainer:not(.ImageCarousel) button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -149,12 +149,20 @@ nav .active {
 .ImageCarousel .carousel {
   width: 100%;
 }
+.ImageCarousel .carousel > div {
+  transition: transform 0.7s ease;
+}
+.ImageCarousel .dot {
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.3);
+}
 
 .IndividualProduto > div {
   flex: 1 1 0;
 }
 .IndividualProduto .images {
-  flex: 2 1 0%;
+  min-height: 60vh;
+  flex: 2.2 1 0%;
 }
 
 /* Produto Card */
