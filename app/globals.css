@@ -201,8 +201,8 @@ nav ul {
 .IndividualProduto .images {
   flex: 2.15 1 0%;
 }
-.IndividualProduto .images .carouselContainer {
-  min-height: calc(50vh + 21vw);
+.IndividualProduto .carouselContainer {
+  min-height: calc(55vh + 23vw);
 }
 
 /* Produto Card */
