@@ -11,7 +11,7 @@ export default async function getProdutos(query) {
     },
   });
 
-  const res = await fetch(url);
+  const res = await fetch(url, { next: { revalidate: 120 } });
 
   return res.json();
 }
