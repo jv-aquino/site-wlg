@@ -8,7 +8,7 @@ import linkHelper from "@/components/linkHelper";
 async function IndividualProduto({ params }) {
   const produto = await getProduto(params.produtoId);
   return ( 
-    <div className="IndividualProduto m-auto gap-8 flex flex-col lg:flex-row w-[90%] lg:w-[92%] xl:w-[80%]">
+    <div className="IndividualProduto m-auto gap-8 flex flex-col lg:flex-row w-[90%] lg:w-[92%] xl:w-[77%]">
       {
         (produto.images.length === 1) ? 
         <div className="divImage full min-h-[70vw] w-[80%] mx-auto lg:w-auto lg:min-h-[77vh] xl:min-h-[95vh] images" style={{ backgroundImage: `url(${produto.images[0].url})`}}></div> :
