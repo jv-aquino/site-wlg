@@ -7,7 +7,7 @@ export const metadata = {
 function Contato() {
   return ( 
     <div className="contato">
-      <div className="divImage w-full h-[85px] relative top-[-25px]" style={{ backgroundImage: 'url(/images/about-us-heading.jpg)', backgroundPosition: 'center center'}}></div>
+      <div className="divImage w-full h-[85px] relative top-[-25px]" style={{ backgroundImage: 'url(/images/about-us-heading.webp)', backgroundPosition: 'center center'}}></div>
 
       <div className="flex flex-col justify-center mx-auto mt-4 gap-10 lg:gap-24 lg:flex-row w-[90%] lg:w-[93%] xl:w-[81%] min-h-[67vh]">
         <div className="divImage full flex-1 min-h-[61vh] w-[95%] lg:h-auto lg:w-auto" style={{backgroundImage: 'url(/favicon.ico)'}}></div>

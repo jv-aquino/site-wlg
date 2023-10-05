@@ -41,7 +41,7 @@ function Linha({ categoria, produtos }) {
     <section className="linha borderDot py-16">
       <div className="pl-10 sm:pl-24 lg:pl-48 pb-10">
         <h2 className="font-bold text-zinc-900 text-4xl">{categoria?.nome}</h2>
-        <p className="text-neutral-400 text-[15px] italic pt-1 font-normal">{categoria?.descricao}</p>
+        <p className="text-foreground text-[15px] italic pt-1 font-normal">{categoria?.descricao}</p>
       </div>
 
       <div className="carouselContainer">

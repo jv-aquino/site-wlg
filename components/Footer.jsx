@@ -9,7 +9,7 @@ async function Footer() {
     <footer className="bg-background text-slate-50 flex flex-col items-center mt-[60px] pt-8 text-center lg:text-start">
           <div className="flex flex-col justify-center items-center gap-10 lg:gap-6
           lg:flex-row lg:justify-between lg:items-start">
-            <img src="/images/wlg_logo.png" alt="" className="footerLogo" />
+            <img loading="lazy" src="/images/wlg_logo.png" alt="" className="footerLogo" />
             <div>
               <h3>Catálogos Online</h3>
               <ul>

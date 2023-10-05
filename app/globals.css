@@ -96,7 +96,7 @@ nav ul {
   gap: 30px;
 }
 .cachorro {
-  background: url('/images/cachorro.jpeg') no-repeat;
+  background: url('/images/cachorro.webp') no-repeat;
   background-size: cover;
 }
 .botaoTransparente {

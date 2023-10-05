@@ -7,7 +7,7 @@ export const metadata = {
 function Sobre() {
   return ( 
     <div className="sobre pb-4">
-      <div className="divImage w-full h-[85px] relative top-[-15px]" style={{ backgroundImage: 'url(/images/about-us-heading.jpg)', backgroundPosition: 'center center'}}></div>
+      <div className="divImage w-full h-[85px] relative top-[-15px]" style={{ backgroundImage: 'url(/images/about-us-heading.webp)', backgroundPosition: 'center center'}}></div>
 
       <div className="flex flex-col justify-center mx-auto mt-14 gap-10 lg:gap-24 lg:flex-row w-[90%] sm:w-[80%] lg:w-[93%] xl:w-[81%]">
 

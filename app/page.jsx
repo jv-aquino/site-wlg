@@ -21,11 +21,11 @@ export default async function Home() {
         <div className="lg:flex flex-col flex-1 flex-grow-[1.19] startGap lg:h-auto">
           <div className="lg:flex flex-1 startGap">
             <EmpresaCard empresa='Traty Vet Pet Care' descricao='Os melhores produtos para seu Pet.' img='/images/tv_logo.png' link='/tratyvet' />
-            <EmpresaCard empresa='Propetz' descricao='Propetz, amor por pet, paixão por inovar.' img='/images/propetz_logo.jpg' link='/propetz' />
+            <EmpresaCard empresa='Propetz' descricao='Propetz, amor por pet, paixão por inovar.' img='/images/propetz_logo.webp' link='/propetz' />
           </div>
           <div className="lg:flex flex-1 startGap">
-            <EmpresaCard empresa='Minag' descricao='Feito para durar.' img='/images/minag_logo.jpeg' link='/minag' />
-            <EmpresaCard empresa='KBSPK Industries' descricao='Tesouras profissionais para tosa em aço japonês inox com classificação 440C.' img='/images/kbspk_logo.jpeg' link='/kbspk' />
+            <EmpresaCard empresa='Minag' descricao='Feito para durar.' img='/images/minag_logo.webp' link='/minag' />
+            <EmpresaCard empresa='KBSPK Industries' descricao='Tesouras profissionais para tosa em aço japonês inox com classificação 440C.' img='/images/kbspk_logo.webp' link='/kbspk' />
           </div>
         </div>
       </main>
@@ -37,7 +37,7 @@ export default async function Home() {
       <section className="flex flex-col w-[82%] lg:flex-row startGap xl:w-[77%] lg:w-[87%] mx-auto pt-20 pb-12 items-center saibaMais" id="saibaMais">
           <div>
               <h2 className="font-bold text-[30px] lg:text-[36px] text-zinc-800 pb-3 lg:pb-6">Saiba mais sobre nós</h2>
-              <div className="flex flex-col gap-7 leading-[23px] text-zinc-400 opacity-90">
+              <div className="flex flex-col gap-7 leading-[23px] text-foreground opacity-90">
                 <p className="font-medium">A WLG Distribuidor Pet é uma empresa de distribuição de <b>produtos para pets e donos de petshops</b> com 12 anos de atuação no mercado, prestando atendimento com pronta-entrega para o melhor conforto aos nossos clientes e amigos. </p>
                 <p className="font-medium">Somos originalmente de Guaratinguetá, porém atuamos em todo o Vale do Paraíba e Litoral Norte.</p>
                 <p className="font-medium">Atualmente trabalhamos com os produtos para pets das marcas <b>Traty Vet</b>, <b>Propetz</b>, <b>KBSPK</b> e <b>Minag</b>.</p>
@@ -48,14 +48,14 @@ export default async function Home() {
           
           <div className="flex flex-col startGap pt-2 lg:pt-0">
             <div className="flex flex-col lg:flex-row startGap">
-                <div><img src="/images/foto_warlei.jpeg" alt="Foto do Dono da WLG" /></div>
-                <div><img src="/images/tv_logo_2.jpeg" alt="Logo da vendedora de produtos para pets Traty Vet" /></div>
+                <div><img loading="lazy" src="/images/foto_warlei.webp" alt="Foto do Dono da WLG" /></div>
+                <div><img loading="lazy" src="/images/tv_logo_2.webp" alt="Logo da vendedora de produtos para pets Traty Vet" /></div>
             </div>
             <div className="flex flex-col lg:flex-row startGap">
-                <div><img src="/images/propetz_logo.jpg" alt="Logo da empresa de produtos para pets Propetz" /></div>
+                <div><img loading="lazy" src="/images/propetz_logo.webp" alt="Logo da empresa de produtos para pets Propetz" /></div>
                 <div className="bg-zinc-100 flex flex-col items-center justify-center gap-2.5 text-center px-4 py-40 lg:py-0">
                     <p className="text-zinc-800 font-bold text-[25px] leading-[1.14]">Diferentes tipos de produtos</p>
-                    <p className="text-gray-500 opacity-80 font-medium px-1"><i>Todos para o banho e tosa do seu pet!</i></p>
+                    <p className="text-[#4A5463] opacity-80 font-medium px-1"><i>Todos para o banho e tosa do seu pet!</i></p>
                 </div>
             </div>
           </div>

@@ -11,7 +11,7 @@ function CategoriaPage() {
       <div className="w-full h-[120px] relative top-[-45px] bg-[#00A8AB]"></div>
 
       <div className="gap-5 lg:gap-[82px] mt-7 flex flex-col lg:flex-row mx-auto w-[90%] lg:w-[95%] xl:w-[78%]">
-        <div className="divImage full flex-1 flex-grow-[1.2] min-h-[80vw] sm:min-h-[70vw] w-full lg:min-h-[80vh] xl:min-h-[76vh] lg:w-auto" style={{backgroundImage: 'url(/images/propetz_logo.jpg)'}}></div>
+        <div className="divImage full flex-1 flex-grow-[1.2] min-h-[80vw] sm:min-h-[70vw] w-full lg:min-h-[80vh] xl:min-h-[76vh] lg:w-auto" style={{backgroundImage: 'url(/images/propetz_logo.webp)'}}></div>
 
         <div className="flex-1">
           <h1 className="font-bold text-zinc-800 text-[36px] mt-5 pb-5 text-center lg:text-start">Propetz</h1>
