@@ -59,7 +59,7 @@ nav li a {
 }
 nav li:hover,
 nav .active {
-  color: #a9a9a9;
+  color: #a5a5a5;
 }
 nav ul {
   transition: transform .5s ease, opacity .45s ease;
@@ -194,8 +194,10 @@ nav ul {
   flex: 1 1 0;
 }
 .IndividualProduto .images {
-  min-height: 60vh;
   flex: 2.2 1 0%;
+}
+.IndividualProduto .images .carouselContainer {
+  min-height: 60vh;
 }
 
 /* Produto Card */

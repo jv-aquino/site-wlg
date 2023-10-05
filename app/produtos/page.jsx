@@ -18,7 +18,7 @@ async function ProdutosPage() {
     <>
     <div className="w-full h-[100px] relative top-[-45px] bg-[#0c1921]"></div>
 
-      <h1 className="font-bold text-zinc-800 text-[35px] text-center mb-8">Nossos Produtos</h1>
+      <h1 className="font-bold text-zinc-800 text-[35px] text-center mb-20">Nossos Produtos</h1>
 
       <div className="borderDot pb-14 responsiveGrid">
         {categorias.map((categoria, i) => {

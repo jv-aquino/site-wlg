@@ -43,6 +43,7 @@ function Navbar() {
         <NavLink close={() => setOpen(false)} link='/produtos'>Produtos</NavLink>
         <NavLink close={() => setOpen(false)} link='/sobre'>Sobre Nós</NavLink>
         <NavLink close={() => setOpen(false)} link='/contato'>Contato</NavLink>
+        <NavLink close={() => setOpen(false)} link='/pesquisar'><span className="symbol text-[18px]">search</span></NavLink>
       </ul>
 
       <button type="button" className="flex min-[924px]:hidden text-[2.6rem] font-thin z-10"

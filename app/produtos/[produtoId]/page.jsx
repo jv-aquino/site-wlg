@@ -11,7 +11,7 @@ async function IndividualProduto({ params }) {
     <div className="IndividualProduto m-auto gap-8 flex flex-col lg:flex-row w-[90%] lg:w-[95%] xl:w-[83%]">
       {
         (produto.images.length === 1) ? 
-        <div className="divImage full min-h-[70vw] w-[80%] mx-auto lg:w-auto lg:min-h-[80vh] xl:min-h-[95vh] images" style={{ backgroundImage: `url(${produto.images[0].url})`}}></div> :
+        <div className="divImage full min-h-[70vw] w-[80%] mx-auto lg:w-auto lg:min-h-[80vh] xl:min-h-[90vh] images" style={{ backgroundImage: `url(${produto.images[0].url})`}}></div> :
         <ImageCarousel images={produto.images} />
       }
       

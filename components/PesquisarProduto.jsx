@@ -5,7 +5,7 @@ import ProdutoCard from "./ProdutoCard";
 
 function PesquisarProduto({ produtos }) {
   const [query, setQuery] = useState("");
-  const [resultados, setResultados] = useState([]); // Array para armazenar os resultados da pesquisa
+  const [resultados, setResultados] = useState([]);
 
   const handleQueryChange = (e) => {
     const newQuery = e.target.value;
@@ -22,7 +22,7 @@ function PesquisarProduto({ produtos }) {
 
   return (
     <>
-      <form className="mx-auto w-[400px] mt-12 pb-6 flex flex-col items-center justify-center" onSubmit={handleSubmit}>
+      <form className="mx-auto w-[400px] pb-6 flex flex-col items-center justify-center" onSubmit={(e) => handleSubmit(e)}>
         <h2 className="font-bold text-[33px] text-zinc-800 pb-4">Pesquisar Produto <span className="symbol translate-y-[2px]">search</span></h2>
 
         <label htmlFor="nome" className="font-medium text-zinc-800 text-[18px]">Nome do produto:</label>
