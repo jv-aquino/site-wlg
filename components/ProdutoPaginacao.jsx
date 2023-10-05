@@ -23,7 +23,7 @@ function ProdutoPaginacao({ produtos }) {
       <div className="mx-auto grid grid-cols-1 lg:gap-10 lg:grid-cols-3">
         {paginatedProdutos.map((produto, index) => (
           <div key={index}>
-            <ProdutoCard produto={produto} self textSize={"22"}>
+            <ProdutoCard produto={produto} self textSize={"22"} redirectImage>
               <p className="botaoTransparente invertido">Saiba Mais</p>
             </ProdutoCard>
           </div>

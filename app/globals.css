@@ -61,6 +61,33 @@ nav li:hover,
 nav .active {
   color: #a9a9a9;
 }
+nav ul {
+  transition: transform .6s ease, opacity .5s ease;
+}
+
+@media screen and (max-width:930px) {
+  nav ul {
+    right: 0;
+    left: 0;
+    top: 20px;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    @apply bg-white gap-5 pb-10 h-screen;
+  }
+  nav ul.open {
+    transform: translate(0);
+  }
+  nav ul.close {
+    opacity: 0;
+    z-index: -10;
+    transform: translateX(-100%);
+  }
+}
 
 /* 
   Start

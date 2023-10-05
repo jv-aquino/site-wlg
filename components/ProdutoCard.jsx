@@ -1,9 +1,13 @@
 import Link from "next/link";
 
-function ProdutoCard({ produto, self, link, children, textSize }) {
+function ProdutoCard({ produto, self, link, children, textSize, redirectImage }) {
   return ( 
     <div>
-      <div className="ProdutoCard divImage full relative min-h-[70vw] lg:min-h-[24vw]" style={{ backgroundImage: `url(${produto.images[0]?.url})`}}>
+      <div className="ProdutoCard divImage full relative min-h-[70vw] lg:min-h-[24vw]" style={{ backgroundImage: `url(${produto.images[0]?.url})`}} onClick={() => {
+        if (redirectImage) {
+          window.location.assign((self) ? ('/produtos/' + produto.id) : link);
+        }
+      }}>
         <Link className="text-2xl" href={(self) ? ('/produtos/' + produto.id) : link}>
           {children}
         </Link>
