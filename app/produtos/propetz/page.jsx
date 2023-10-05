@@ -1,6 +1,10 @@
 import getProdutos from "@/actions/getProdutos";
 import ProdutoPaginacao from "@/components/ProdutoPaginacao";
 
+export const metadata = {
+  title: 'Produtos da Propetz - WLG',
+}
+
 async function ProdutosCategoria() {
   const produtos = await getProdutos({ categoriaId: '6514d1fb2a6f9c92f9eb8a71' });
 

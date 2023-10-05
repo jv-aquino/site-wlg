@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { usePathname } from 'next/navigation'
 
-function NavLink({ children, link}) {
+function NavLink({ children, link, close }) {
   const path = usePathname();
 
   return ( 
-    <li><Link href={link} className={(path === link) ? 'active' : ''}>{children}</Link></li>
+    <li><Link href={link} className={(path === link) ? 'active' : ''} onClick={() => {
+      setTimeout(close(), 100)
+    }}>{children}</Link></li>
   );
 }
 

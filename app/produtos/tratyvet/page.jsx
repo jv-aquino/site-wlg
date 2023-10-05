@@ -1,18 +1,13 @@
 import Link from "next/link";
 import getCategorias from "@/actions/getCategorias";
-import getProdutos from "@/actions/getProdutos";
-
-import PesquisarProduto from "@/components/PesquisarProduto";
 
 export const metadata = {
-  title: 'Produtos da Traty Vet, Propetz, Minag e KBSPK!',
+  title: 'Produtos da Traty Vet - WLG',
 }
 
 async function ProdutosPage() {
   const categorias = await getCategorias();
-  const images = ['https://res.cloudinary.com/dq0frc1aq/image/upload/v1695945265/njtaebgkd3vqnpszm6pl.jpg', 'https://res.cloudinary.com/dq0frc1aq/image/upload/v1695987651/njgw4dompooqy3k1cfym.jpg', 'https://res.cloudinary.com/dq0frc1aq/image/upload/v1696002464/w2ojfvbrvdifeewstb4x.jpg', 'https://res.cloudinary.com/dq0frc1aq/image/upload/v1696122015/sagcdjenhnre12tgtgbp.jpg', 'https://res.cloudinary.com/dq0frc1aq/image/upload/v1696167628/bimikku6bhzsy3egbhnx.png'];
-
-  const produtos = await getProdutos();
+  const images = ['https://res.cloudinary.com/dq0frc1aq/image/upload/v1695945265/njtaebgkd3vqnpszm6pl.jpg', 'https://res.cloudinary.com/dq0frc1aq/image/upload/v1695987651/njgw4dompooqy3k1cfym.jpg'];
 
   return ( 
     <>
@@ -20,7 +15,7 @@ async function ProdutosPage() {
 
       <h1 className="font-bold text-zinc-800 text-[35px] text-center mb-8">Nossos Produtos</h1>
 
-      <div className="borderDot pb-14 responsiveGrid">
+      <div className="mx-auto w-[85%] sm:w-[75%] lg:w-[80%] mb-8 gap-x-16 gap-y-8 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
         {categorias.map((categoria, i) => {
           return (
             <div key={i}>
@@ -37,8 +32,6 @@ async function ProdutosPage() {
           )
         })}
       </div>
-      
-      <PesquisarProduto produtos={produtos} />
     </>
    );
 }

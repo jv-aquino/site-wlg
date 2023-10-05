@@ -41,7 +41,7 @@ function ImageCarousel({ images }) {
               )
             })}
           </div>
-          <div className="flex justify-center gap-4 absolute bottom-0 left-0 right-0">
+          <div className="dots flex justify-center gap-4 absolute bottom-0 left-0 right-0">
             {images.map((_img, i) => (
               <button
                 key={i}
