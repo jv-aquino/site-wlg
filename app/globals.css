@@ -199,10 +199,10 @@ nav ul {
   flex: 1 1 0;
 }
 .IndividualProduto .images {
-  flex: 2.15 1 0%;
+  flex: 2.07 1 0%;
 }
 .IndividualProduto .carouselContainer {
-  min-height: calc(55vh + 23vw);
+  min-height: calc(54vh + 19vw);
 }
 
 /* Produto Card */
