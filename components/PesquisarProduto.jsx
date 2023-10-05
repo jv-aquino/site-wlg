@@ -37,9 +37,9 @@ function PesquisarProduto({ produtos }) {
       </form>
 
       <div className="responsiveGrid">
-        {resultados.map((produto) => (
-          <ProdutoCard produto={produto} self textSize={"22"} redirectImage>
-          <p className="bg-white text-black px-[16px] py-3.5"><span className="symbol">visibility</span></p>
+        {resultados.map((produto, i) => (
+          <ProdutoCard key={i} produto={produto} self textSize={"22"} redirectImage>
+            <p className="bg-white text-black px-[16px] py-3.5"><span className="symbol">visibility</span></p>
           </ProdutoCard>
         ))}
       </div>

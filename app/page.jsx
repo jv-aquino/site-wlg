@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default async function Home() {
   const categorias = await getCategorias();
-  const produtos = getProdutos({ isFeatured: true });
+  const produtos = await getProdutos({ isFeatured: true });
 
   return (
     <>
@@ -30,9 +30,9 @@ export default async function Home() {
         </div>
       </main>
 
-      {produtos.then((r) => (categorias.map((categoria) => {
-        return <Linha categoria={categoria} produtos={r.filter((produto) => produto.categoriaId === categoria.id)} />
-      })))}
+      {categorias.map((categoria, i) => {
+        return <Linha categoria={categoria} key={i} produtos={produtos.filter((produto) => produto.categoriaId === categoria.id)} />
+      })}
 
       <section className="flex flex-col w-[82%] lg:flex-row startGap xl:w-[77%] lg:w-[87%] mx-auto pt-20 pb-12 items-center saibaMais" id="saibaMais">
           <div>
