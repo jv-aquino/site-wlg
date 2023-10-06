@@ -10,6 +10,7 @@ import './globals.css'
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import BotaoZap from '@/components/BotaoZap';
 
 export default function RootLayout({ children }) {
   return (
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <div className='pt-[155px]'></div>
         {children}
+        <BotaoZap />
         <Footer />
       </body>
     </html>

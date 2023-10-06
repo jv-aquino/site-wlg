@@ -317,6 +317,18 @@ footer ul li:hover {
   font-weight: 600;
 }
 
+/* Botao Zap */
+.botaoZap {
+  animation: cresceDiminui 1.5s .3s ease infinite;
+}
+@keyframes cresceDiminui {
+  to {
+    transform: scale(0.9);
+  } from {
+    transform: scale(1.1);
+  }
+}
+
 /* Loading */
 #preloader {
   overflow: hidden;
