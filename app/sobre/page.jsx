@@ -1,7 +1,5 @@
-import Link from "next/link";
-
 export const metadata = {
-  title: 'Sobre a WLG',
+  title: 'Sobre a WLG Distribuidor Pet',
 }
 
 function Sobre() {
